@@ -1,14 +1,26 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package controller;
 
-/**
- *
- * @author Andres Gonzalez
- */
-public class Control {
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import models.ManagerProducts;
+import view.JFramePrincipal;
+
+public class Control implements ActionListener{
+    
+    private ManagerProducts managerProducts;
+    private JFramePrincipal mainFrame;
+    
+    public Control(){
+        managerProducts = new ManagerProducts();
+        mainFrame = new JFramePrincipal();
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    
+    
     
 }

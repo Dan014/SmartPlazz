@@ -33,7 +33,7 @@ public class JFramePrincipal extends JFrame {
 		this.setLayout(new BorderLayout());
 		this.setSize(Toolkit.getDefaultToolkit().getScreenSize());
 		this.setLocationRelativeTo(null);
-		
+		this.setTitle("SmartPlazz");
 		jScrollPane.setViewportView(jPanelPrincipal);
 		this.add(jScrollPane, BorderLayout.CENTER);
 

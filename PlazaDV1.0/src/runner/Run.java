@@ -1,11 +1,12 @@
+
 package runner;
 
-import view.JFramePrincipal;
+import controller.Control;
 
 public class Run {
 
-	public static void main(String[] args) {
-		new JFramePrincipal();
-}
-
+    public static void main(String[] args) {
+        new Control();
+    }
+    
 }
