@@ -3,17 +3,27 @@ package controller;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.text.ParseException;
 import models.ManagerProducts;
+import models.TypeProduct;
+import persitence.FileManager;
 import view.JFramePrincipal;
 
 public class Control implements ActionListener{
     
     private ManagerProducts managerProducts;
     private JFramePrincipal mainFrame;
+    private FileManager filemanager;
     
-    public Control(){
+    public Control() throws ParseException{
         managerProducts = new ManagerProducts();
         mainFrame = new JFramePrincipal();
+        filemanager = new FileManager();
+        managerProducts.addSeller(managerProducts.createSeller("manuel", 1049777766));
+        
+        managerProducts.addNewProdcut(managerProducts.createProdcut(100, 1000, "mango", TypeProduct.frutas, filemanager.createDate("06/01/2019")), 1049777766);
+        
+        filemanager.writeBinary(managerProducts.getListOfProdcuts());
     }
 
     @Override

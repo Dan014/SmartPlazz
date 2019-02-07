@@ -44,6 +44,11 @@ public class ProductPlazz {
     public Calendar getDateSell() {
         return dateSell;
     }
+
+    @Override
+    public String toString() {
+        return  idProductPlazz + "," + kilosProd + "," + priceProd + "," + nameProductPlazz + "," + typeprod ;
+    }
     
     
     
