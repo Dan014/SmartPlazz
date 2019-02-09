@@ -10,7 +10,9 @@ import persitence.FileManager;
 import view.JFramePrincipal;
 
 public class Control implements ActionListener{
-    
+    /**
+     * Modificar la vista y el controlador para que reciba el evento
+     */
     private ManagerProducts managerProducts;
     private JFramePrincipal mainFrame;
     private FileManager filemanager;
