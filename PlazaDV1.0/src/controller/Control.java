@@ -5,10 +5,13 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.text.ParseException;
 
+import javax.swing.JDialog;
+
 import models.ManagerProducts;
 import models.TypeProduct;
 import persitence.FileManager;
 import view.JFramePrincipal;
+import viewTable.JDialogAddCost;
 
 public class Control implements ActionListener {
 	/**
@@ -16,17 +19,24 @@ public class Control implements ActionListener {
 	 */
 	private ManagerProducts managerProducts;
 	private JFramePrincipal mainFrame;
+	private viewTable.JFramePrincipal jFramePrincipalTable;
+	private JDialogAddCost jDialogAddCost;
 	private FileManager filemanager;
 
 	public Control() throws ParseException {
+		
+//		jFramePrincipalTable = new viewTable.JFramePrincipal(this);
+		jDialogAddCost = new JDialogAddCost(this, jFramePrincipalTable);
+
+
 		managerProducts = new ManagerProducts();
 		mainFrame = new JFramePrincipal(this);
 		filemanager = new FileManager();
 
-		managerProducts.addSeller(managerProducts.createSeller("manuel", 1049777766));
-
-		managerProducts.addNewProdcut(managerProducts.createProdcut(100, 1000, "mango", TypeProduct.frutas,
-				filemanager.createDate("06/01/2019")), 1049777766);
+//		managerProducts.addSeller(managerProducts.createSeller("manuel", 1049777766));
+//
+//		managerProducts.addNewProdcut(managerProducts.createProdcut(100, 1000, "mango", TypeProduct.frutas,
+//				filemanager.createDate("06/01/2019")), 1049777766);
 
 		filemanager.writeBinary(managerProducts.getListOfProdcuts());
 	}
@@ -37,9 +47,8 @@ public class Control implements ActionListener {
 		case C_LOGIN:
 			showViewLogin();
 			break;
-		case C_INGRES:
-			ingres();
-			System.out.println("Ingresar");
+		case C_AVERAGE:
+			jDialogAddCost.setVisible( true );
 
 		default:
 			break;
@@ -54,10 +63,7 @@ public class Control implements ActionListener {
 		jFramePrincipal.setVisible(true);
 	}
 	
-	private void ingres() {
-		viewTable.JFramePrincipal jFramePrincipal = new viewTable.JFramePrincipal();
-		jFramePrincipal.setVisible(true);
-	}
+
 
 	private void manageAuto() {
 		// Auto auto = jDialogAddCost.createCost();

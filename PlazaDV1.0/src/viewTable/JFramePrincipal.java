@@ -16,13 +16,15 @@ import javax.swing.JPanel;
 import javax.swing.JScrollBar;
 import javax.swing.JScrollPane;
 
+import controller.Control;
+
 public class JFramePrincipal extends JFrame {
 	private JPanelPrincipal jPanelPrincipal;
 	private JScrollPane jScrollPane;
 	Icon icon;
 
-	public JFramePrincipal() {
-		this.jPanelPrincipal = new JPanelPrincipal();
+	public JFramePrincipal(Control controllerApp ) {
+		this.jPanelPrincipal = new JPanelPrincipal(controllerApp);
 		this.jScrollPane = new JScrollPane();
 //		setIconImage(new ImageIcon(getClass().getResource("/images/WSO.png")).getImage());
 		init();

@@ -13,15 +13,19 @@ import javax.swing.JButton;
 import javax.swing.JComponent;
 import javax.swing.JPanel;
 
+import controller.Commands;
+import controller.Control;
+
+
 
 public class JPanelPrincipalCentroVistaEmp extends JPanel {
 
 	JPanel jPanelNorth;
-	JButton jButton, jButton2, jButton3;
+	JButton jButton, jButton2, jButton3m ,find;
 	ImageIcon imageIcon;
 	Icon icon;
 
-	public JPanelPrincipalCentroVistaEmp() {
+	public JPanelPrincipalCentroVistaEmp(Control controllerApp) {
 
 		jPanelNorth = new JPanel();
 		jPanelNorth.setBackground(new Color(59, 232, 183));
@@ -29,19 +33,26 @@ public class JPanelPrincipalCentroVistaEmp extends JPanel {
 		
 		
 
-		init();
+		init(controllerApp);
 	}
 
-	private void init() {
+	private void init(Control controllerApp) {
 
 		this.setLayout(new BorderLayout());
 		this.setSize(Toolkit.getDefaultToolkit().getScreenSize());
 		this.setBackground(Color.BLUE);
 		this.setPreferredSize(new Dimension(800, 100));
 		
-		jPanelNorth.add(create("Ingresar Producto","/images/dieta.png"));
-		jPanelNorth.add(create("Eliminar Producto","/images/basura.png"));
-		jPanelNorth.add(create("Buscar Producto","/images/busqueda.png"));
+		jPanelNorth.add(create("Ingresar Producto","/images/dieta.png", Commands.C_AVERAGE.name(), controllerApp));
+		jPanelNorth.add(create("Eliminar Producto","/images/basura.png", Commands.C_AVERAGE.name(), controllerApp));
+		jPanelNorth.add(create("Buscar Producto","/images/busqueda.png", Commands.C_AVERAGE.name(), controllerApp));
+
+		
+
+		
+		
+		
+		
 
 
 
@@ -49,11 +60,11 @@ public class JPanelPrincipalCentroVistaEmp extends JPanel {
 		
 	}
 	
-	public JButton create(String name,String url) {
+	public JButton create(String name,String url, String comando, Control control) {
 		jButton = new JButton(name);
 		jButton.setBounds(0, 0, 200, 200);
-//		jButton.setActionCommand(Commands.C_SHOW_NEW_COST.name());
-//		jButton.addActionListener(controllerApp);
+		jButton.setActionCommand( comando);
+		jButton.addActionListener(control);
 		jButton.setBackground(new Color(59, 232, 89));
 		jButton.setForeground(new Color(255, 255, 255));// blanco
 		imageIcon = new ImageIcon(getClass().getResource(url));

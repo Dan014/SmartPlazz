@@ -12,6 +12,8 @@ import javax.swing.ImageIcon;
 import javax.swing.JComponent;
 import javax.swing.JPanel;
 
+import controller.Control;
+
 public class JPanelPrincipal extends JPanel {
 
 	private JPanelPrincipalCentroVistaEmp jPanelPrincipalCentroVistaEmp;
@@ -20,8 +22,8 @@ public class JPanelPrincipal extends JPanel {
 	ImageIcon imageIcon;
 	Icon icon;
 
-	public JPanelPrincipal() {
-		this.jPanelPrincipalCentroVistaEmp = new JPanelPrincipalCentroVistaEmp();
+	public JPanelPrincipal(Control control) {
+		this.jPanelPrincipalCentroVistaEmp = new JPanelPrincipalCentroVistaEmp(control);
 		this.jPanelPrincipalIzqVistaEmp = new JPanelPrincipalIzqVistaEmp();
 		this.myJTable = new MyJTable();
 		init();
