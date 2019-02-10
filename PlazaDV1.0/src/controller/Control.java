@@ -37,7 +37,9 @@ public class Control implements ActionListener {
 		case C_LOGIN:
 			showViewLogin();
 			break;
-		case FIND:
+		case C_INGRES:
+			ingres();
+			System.out.println("Ingresar");
 
 		default:
 			break;
@@ -48,7 +50,12 @@ public class Control implements ActionListener {
 	
 	
 	private void showViewLogin() {
-		viewLogin.JFramePrincipal jFramePrincipal = new viewLogin.JFramePrincipal();
+		viewLogin.JFramePrincipal jFramePrincipal = new viewLogin.JFramePrincipal(null);
+		jFramePrincipal.setVisible(true);
+	}
+	
+	private void ingres() {
+		viewTable.JFramePrincipal jFramePrincipal = new viewTable.JFramePrincipal();
 		jFramePrincipal.setVisible(true);
 	}
 

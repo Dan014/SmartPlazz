@@ -13,18 +13,20 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
+import controller.Control;
+
 public class JPanelPrincipal extends JPanel {
 
 
 	private static final long serialVersionUID = 1L;
-	public JPanelPrincipal() {
+	public JPanelPrincipal(Control control) {
 		this.setSize(700, 600);
 		this.setBackground(Color.white);
 		setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
-		initComponents();
+		initComponents(control);
 	}
 
-	private void initComponents() {
+	private void initComponents(Control control) {
 		
 
 		this.setSize(Toolkit.getDefaultToolkit().getScreenSize());
@@ -35,7 +37,7 @@ public class JPanelPrincipal extends JPanel {
 		JPanelCenterForm jPanelCenter = new JPanelCenterForm();
 		this.add(jPanelCenter);
 
-		JPanelSouth jPanelSouth = new JPanelSouth();
+		JPanelSouth jPanelSouth = new JPanelSouth(control);
 		this.add(jPanelSouth);
 
 	}

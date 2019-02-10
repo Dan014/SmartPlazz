@@ -17,6 +17,8 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
+import controller.Control;
+
 public class JPanelPrincipal extends JPanel {
 
 	private JPanel jPanelNorth, jPanelWest, jPanelEast, jPanelSout, jPanelCenter, jPanelCenterImage, jPanelCenterCampos;
@@ -27,7 +29,7 @@ public class JPanelPrincipal extends JPanel {
 	ImageIcon imageIcon;
 	Icon icon;
 
-	public JPanelPrincipal() {
+	public JPanelPrincipal(Control controller) {
 		jPanelCenter = new JPanel();
 		jPanelCenter.setLayout(new BorderLayout());
 		jPanelCenter.setBackground(new Color(59, 232, 183));
@@ -57,10 +59,10 @@ public class JPanelPrincipal extends JPanel {
 		jPanelSout.setBackground(new Color(59, 232, 183));
 		jPanelSout.setPreferredSize(new Dimension(100, 100));
 
-		init();
+		init(controller);
 	}
 
-	private void init() {
+	private void init(Control controllerApp) {
 
 		this.setLayout(new BorderLayout());
 		this.setSize(Toolkit.getDefaultToolkit().getScreenSize());
@@ -78,7 +80,9 @@ public class JPanelPrincipal extends JPanel {
 
 		jPanelCenter.add(jPanelCenterCampos, BorderLayout.CENTER);
 		jPanelCenter.add(jPanelCenterImage, BorderLayout.NORTH);
-		jButton = new JButton("Crear usuario");
+		jButton = new JButton("INGRESAR");
+		jButton.setActionCommand(controller.Commands.C_LOGIN.name());
+		jButton.addActionListener(controllerApp);
 		jPanelSout.add(jButton);
 
 		this.add(jPanelCenter, BorderLayout.CENTER);
