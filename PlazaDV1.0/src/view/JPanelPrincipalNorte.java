@@ -7,15 +7,20 @@ import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.Toolkit;
 
+import javax.swing.BorderFactory;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
+import javax.swing.JButton;
 import javax.swing.JComponent;
 import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.border.EtchedBorder;
 
 public class JPanelPrincipalNorte extends JPanel {
 
 	private JPanel jPanelNorteMenuSup, jPanelCentroContenedor, jPanelDerechaContenedor, jPanelWhiteCenter,
 			jPanelWhiteMenu;
+	private JButton jButtonLogin, jButtonCreate;
 	
 	private JPanelMenuPrincipal jPanelMenuPrincipal;
 	private JPanelPrototipo jPanelPrototipo;
@@ -31,6 +36,9 @@ public class JPanelPrincipalNorte extends JPanel {
 		this.jPanelDerechaContenedor = new JPanel();
 		this.jPanelWhiteCenter = new JPanel();
 		this.jPanelWhiteMenu = new JPanel();
+		
+		jButtonCreate = new JButton("Crear");
+		jButtonLogin = new JButton("Login");
 
 		init();
 	}
@@ -44,6 +52,9 @@ public class JPanelPrincipalNorte extends JPanel {
 
 		jPanelNorteMenuSup.setBackground(new Color(59, 232, 183));
 		jPanelNorteMenuSup.setPreferredSize(new Dimension(0, 100));
+		jPanelNorteMenuSup.add(jButtonCreate);
+		jPanelNorteMenuSup.add(jButtonLogin);
+
 
 		jPanelCentroContenedor.setBackground(new Color(59, 232, 85));
 		jPanelCentroContenedor.setPreferredSize(new Dimension(700, 0));

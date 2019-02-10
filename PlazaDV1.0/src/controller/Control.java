@@ -21,6 +21,8 @@ public class Control implements ActionListener{
         managerProducts = new ManagerProducts();
         mainFrame = new JFramePrincipal();
         filemanager = new FileManager();
+        
+        
         managerProducts.addSeller(managerProducts.createSeller("manuel", 1049777766));
         
         managerProducts.addNewProdcut(managerProducts.createProdcut(100, 1000, "mango", TypeProduct.frutas, filemanager.createDate("06/01/2019")), 1049777766);
@@ -33,6 +35,14 @@ public class Control implements ActionListener{
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
+    
+	private void manageAuto() {
+//		Auto auto = jDialogAddCost.createCost();
+//		enterprise.addCost(auto);
+//		enterprise.addtoArray(auto);
+//		jfMainWindow.addElementToTable(auto.toObjectVector());
+	}
+	
     
     
 }

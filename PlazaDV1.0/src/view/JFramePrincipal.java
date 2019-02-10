@@ -41,5 +41,9 @@ public class JFramePrincipal extends JFrame {
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 	}
+	
+	public void addElementToTable(Object[] vectorElement) {
+//		jpTableElements.addElementToTable( vectorElement );
+	}
 
 }
