@@ -1,11 +1,12 @@
 package runner;
 
-import viewsFormAddProduct.NewFrame;
+import viewsFormAddProduct.JFramePrincipal;
+import viewsFormAddProduct.JPanelPrincipal;
 
 public class TestViewFormAddProduct {
 	
 	public static void main(String[] args) {
-		new NewFrame();
+		new JFramePrincipal();
 	}
 
 }

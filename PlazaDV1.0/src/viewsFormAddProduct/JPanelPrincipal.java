@@ -5,33 +5,33 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.FontMetrics;
+import java.awt.Toolkit;
 
 import javax.swing.BoxLayout;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JPanel;
 
-public class NewFrame extends JFrame {
+public class JPanelPrincipal extends JPanel {
 
 
 	private static final long serialVersionUID = 1L;
-	public NewFrame() {
-		this.setTitle("Primera ventana");
-		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
-		this.setLocation(300, 50);
-		this.setIconImage(new ImageIcon(getClass().getResource("/images/iconWindow.png")).getImage());
-		this.getContentPane().setBackground(Color.white);
-		setLayout(new BoxLayout(getContentPane(), BoxLayout.Y_AXIS));
+	public JPanelPrincipal() {
+		this.setSize(700, 600);
+		this.setBackground(Color.white);
+		setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 		initComponents();
-		this.pack();
-		this.setVisible(true);
 	}
 
 	private void initComponents() {
+		
 
+		this.setSize(Toolkit.getDefaultToolkit().getScreenSize());
+		
 		JPanelNorthForm jPanelNorth = new JPanelNorthForm();
 		this.add(jPanelNorth);
-
+//
 		JPanelCenterForm jPanelCenter = new JPanelCenterForm();
 		this.add(jPanelCenter);
 

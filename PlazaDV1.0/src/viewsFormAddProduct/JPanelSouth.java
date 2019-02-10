@@ -17,6 +17,7 @@ public class JPanelSouth extends JPanel {
 	}
 
 	public void init() {
+		this.setBackground(Color.WHITE);
 		jButton = new JButton("Guardar");
 		this.add(jButton);
 
