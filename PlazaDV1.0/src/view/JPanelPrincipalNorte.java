@@ -16,6 +16,9 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.EtchedBorder;
 
+import controller.Control;
+
+
 public class JPanelPrincipalNorte extends JPanel {
 
 	private JPanel jPanelNorteMenuSup, jPanelCentroContenedor, jPanelDerechaContenedor, jPanelWhiteCenter,
@@ -28,7 +31,7 @@ public class JPanelPrincipalNorte extends JPanel {
 	ImageIcon imageIcon;
 	Icon icon;
 
-	public JPanelPrincipalNorte() {
+	public JPanelPrincipalNorte(Control controllerApp) {
 		this.jPanelMenuPrincipal =new JPanelMenuPrincipal();
 		this.jPanelPrototipo = new JPanelPrototipo();
 		this.jPanelNorteMenuSup = new JPanel();
@@ -37,8 +40,12 @@ public class JPanelPrincipalNorte extends JPanel {
 		this.jPanelWhiteCenter = new JPanel();
 		this.jPanelWhiteMenu = new JPanel();
 		
-		jButtonCreate = new JButton("Crear");
-		jButtonLogin = new JButton("Login");
+		jButtonCreate = new JButton("LOGIN");
+		jButtonCreate.setActionCommand(controller.Commands.C_LOGIN.name());
+		jButtonCreate.addActionListener(controllerApp);
+		
+		
+		jButtonLogin = new JButton("CREAR");
 
 		init();
 	}
