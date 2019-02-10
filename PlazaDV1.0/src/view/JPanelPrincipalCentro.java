@@ -37,13 +37,13 @@ public class JPanelPrincipalCentro extends JPanel {
 
 		jPanelCenter.setBackground(Color.CYAN);
 
-		jPanelDerecha.setBackground(Color.BLUE);
+		jPanelDerecha.setBackground(new Color(238, 238, 238));
 		jPanelDerecha.setPreferredSize(new Dimension(100, 100));
 
-		jPanelIzquierda.setBackground(Color.GREEN);
+		jPanelIzquierda.setBackground(new Color(238, 238, 238));
 		jPanelIzquierda.setPreferredSize(new Dimension(100, 100));
 
-		jPanelNorte.setBackground(Color.LIGHT_GRAY);
+		jPanelNorte.setBackground(new Color(238, 238, 238));
 		jPanelNorte.setPreferredSize(new Dimension(100, 100));
 
 		this.add(jPanelNorte, BorderLayout.NORTH);

@@ -42,12 +42,6 @@ public class JPanelPrincipal extends JPanel {
 //		this.add(jPanelEasth, BorderLayout.EAST);
 	}
 
-//	@Override
-//	protected void paintComponent(Graphics g) {
-//		imageIcon = new ImageIcon(getClass().getResource("/images/fondo.jpg"));
-//		g.drawImage(imageIcon.getImage(), 0, 0, getWidth(), getHeight(), this);
-//		setOpaque(false);
-//		super.paintComponent(g);
-//	}
+
 
 }

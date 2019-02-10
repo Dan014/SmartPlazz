@@ -63,7 +63,7 @@ public class JPanelPrincipalNorte extends JPanel {
 		jPanelNorteMenuSup.add(jButtonLogin);
 
 
-		jPanelCentroContenedor.setBackground(new Color(59, 232, 85));
+		jPanelCentroContenedor.setBackground(Color.WHITE);
 		jPanelCentroContenedor.setPreferredSize(new Dimension(700, 0));
 
 //		jPanelWhiteCenter.setBackground(Color.WHITE);
@@ -73,7 +73,7 @@ public class JPanelPrincipalNorte extends JPanel {
 //		jPanelWhiteMenu.setBackground(Color.WHITE);
 //		jPanelWhiteMenu.setPreferredSize(new Dimension(350, 300));
 
-		jPanelDerechaContenedor.setBackground(new Color(59, 232, 85));
+		jPanelDerechaContenedor.setBackground(Color.WHITE);
 		jPanelDerechaContenedor.setPreferredSize(new Dimension(500, 0));
 
 		jPanelCentroContenedor.add(jPanelWhiteCenter, BorderLayout.CENTER);

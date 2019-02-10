@@ -30,14 +30,24 @@ public class JPanelMenuPrincipal extends JPanel {
 		this.setPreferredSize(new Dimension(300, 300));
 
 		jButton = new JButton("Productos Del Dia");
-		jButton.setBackground(Color.ORANGE);
+		jButton.setBackground(new Color(65, 255, 255));
 		jButton.setFont(new Font("Nunito Sans", 1, 20));
 		jButton.setForeground(Color.WHITE);
-		
-		
+
 		jButton2 = new JButton("Productos en Descuento");
+		jButton2.setBackground(new Color(59, 232, 183));
+		jButton2.setFont(new Font("Nunito Sans", 1, 20));
+		jButton2.setForeground(Color.WHITE);
+
 		jButton3 = new JButton("Productos Mas Costosos");
+		jButton3.setBackground(new Color(78, 255, 155));
+		jButton3.setFont(new Font("Nunito Sans", 1, 20));
+		jButton3.setForeground(Color.WHITE);
+
 		jButton4 = new JButton("Productos en Promocion");
+		jButton4.setBackground(new Color(59, 232, 85));
+		jButton4.setFont(new Font("Nunito Sans", 1, 20));
+		jButton4.setForeground(Color.WHITE);
 
 		this.add(jButton);
 		this.add(jButton2);
