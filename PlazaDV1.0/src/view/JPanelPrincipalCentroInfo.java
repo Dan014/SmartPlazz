@@ -18,6 +18,7 @@ import javax.swing.JPanel;
 public class JPanelPrincipalCentroInfo extends JPanel {
 	private JButton jButton, jButton2, jButton3, jButton4, jButton5, jButton6, jButton7, jButton8, jButton9, jButton10;
 	private JPanel jPanelDerecha, jPanelIzquierda;
+	private JPanelPrototipo jPanelPrototipo;
 
 	ImageIcon imageIcon;
 	Icon icon;
@@ -33,12 +34,12 @@ public class JPanelPrincipalCentroInfo extends JPanel {
 
 	private void init() {
 		this.setLayout(new GridLayout(5, 2, 50, 30));
-		this.setPreferredSize(new Dimension(500, 700));
+		this.setPreferredSize(new Dimension(700, 200));
 
-		jButton = new JButton("Productos Del Dia");
-		jButton.setBackground(Color.ORANGE);
-		jButton.setFont(new Font("Nunito Sans", 1, 20));
-		jButton.setForeground(Color.WHITE);
+		
+//		jButton.setBackground(Color.ORANGE);
+//		jButton.setFont(new Font("Nunito Sans", 1, 20));
+//		jButton.setForeground(Color.WHITE);
 		jButton2 = new JButton("Productos en Descuento");
 		jButton3 = new JButton("Productos Mas Costosos");
 		jButton4 = new JButton("Productos en Promocion");
@@ -53,16 +54,17 @@ public class JPanelPrincipalCentroInfo extends JPanel {
 
 
 
-		this.add(jButton);
-		this.add(jButton2);
-		this.add(jButton3);
-		this.add(jButton4);
-		this.add(jButton5);
-		this.add(jButton6);
-		this.add(jButton7);
-		this.add(jButton8);
-		this.add(jButton9);
-		this.add(jButton10);
+		this.add(jPanelPrototipo = new JPanelPrototipo("Mango", 2500, 10, "/images/mango.jpg"));
+		this.add(jPanelPrototipo = new JPanelPrototipo("Papa", 2500, 10, "/images/papa.jpg"));
+		this.add(jPanelPrototipo = new JPanelPrototipo("Banano", 2500, 10, "/images/banano.jpg"));
+		this.add(jPanelPrototipo = new JPanelPrototipo("Cebolla Larga", 2500, 10, "/images/cebollaL.jpg"));
+		this.add(jPanelPrototipo = new JPanelPrototipo("Coco", 2500, 10, "/images/coco.jpg"));
+		this.add(jPanelPrototipo = new JPanelPrototipo("Manzana", 2500, 10, "/images/manzana.jpg"));
+		this.add(jPanelPrototipo = new JPanelPrototipo("Piña", 2500, 10, "/images/piña.jpg"));
+		this.add(jPanelPrototipo = new JPanelPrototipo("Remolacha", 2500, 10, "/images/remolacha.jpg"));
+		this.add(jPanelPrototipo = new JPanelPrototipo("Sandia", 2500, 10, "/images/sandia.jpg"));
+		this.add(jPanelPrototipo = new JPanelPrototipo("Zanahoria", 2500, 10, "/images/zanahoria.jpg"));
+
 	}
 
 }

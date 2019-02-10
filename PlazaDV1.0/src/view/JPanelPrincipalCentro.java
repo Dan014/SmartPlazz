@@ -33,7 +33,7 @@ public class JPanelPrincipalCentro extends JPanel {
 
 		this.setLayout(new BorderLayout());
 		this.setSize(Toolkit.getDefaultToolkit().getScreenSize());
-		this.setPreferredSize(new Dimension(700,900));
+		this.setPreferredSize(new Dimension(700,1500));
 
 		jPanelCenter.setBackground(Color.CYAN);
 

@@ -33,7 +33,7 @@ public class JPanelPrincipalNorte extends JPanel {
 
 	public JPanelPrincipalNorte(Control controllerApp) {
 		this.jPanelMenuPrincipal =new JPanelMenuPrincipal();
-		this.jPanelPrototipo = new JPanelPrototipo();
+		this.jPanelPrototipo = new JPanelPrototipo("Fresa", 10, 21, "/images/fresa.jpg");
 		this.jPanelNorteMenuSup = new JPanel();
 		this.jPanelCentroContenedor = new JPanel();
 		this.jPanelDerechaContenedor = new JPanel();
