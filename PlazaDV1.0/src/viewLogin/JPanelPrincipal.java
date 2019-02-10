@@ -7,6 +7,8 @@ import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.BorderFactory;
 import javax.swing.Icon;
@@ -17,9 +19,10 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
+import controller.Commands;
 import controller.Control;
 
-public class JPanelPrincipal extends JPanel {
+public class JPanelPrincipal extends JPanel implements ActionListener {
 
 	private JPanel jPanelNorth, jPanelWest, jPanelEast, jPanelSout, jPanelCenter, jPanelCenterImage, jPanelCenterCampos;
 	private JLabel jLabel;
@@ -81,8 +84,8 @@ public class JPanelPrincipal extends JPanel {
 		jPanelCenter.add(jPanelCenterCampos, BorderLayout.CENTER);
 		jPanelCenter.add(jPanelCenterImage, BorderLayout.NORTH);
 		jButton = new JButton("INGRESAR");
-		jButton.setActionCommand(controller.Commands.C_LOGIN.name());
-		jButton.addActionListener(controllerApp);
+		jButton.setActionCommand(controller.Commands.C_INGRES.name());
+		jButton.addActionListener(this);
 		jPanelSout.add(jButton);
 
 		this.add(jPanelCenter, BorderLayout.CENTER);
@@ -108,5 +111,16 @@ public class JPanelPrincipal extends JPanel {
 		this.add(jLabel);
 		return jLabel;
 
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		if (e.getSource() == jButton) {
+			viewTable.JFramePrincipal ventanaJTable = new viewTable.JFramePrincipal();
+			ventanaJTable.setVisible(true);
+			ventanaJTable.setResizable(false);
+			ventanaJTable.setLocationRelativeTo(null);
+			this.setVisible(false);
+		}		
 	}
 }
