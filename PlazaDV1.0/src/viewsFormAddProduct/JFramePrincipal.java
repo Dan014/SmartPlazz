@@ -23,8 +23,8 @@ public class JFramePrincipal extends JFrame {
 	private JScrollPane jScrollPane;
 	Icon icon;
 
-	public JFramePrincipal(Control control) {
-		this.jPanelPrincipal = new JPanelPrincipal(control);
+	public JFramePrincipal( ) {
+		this.jPanelPrincipal = new JPanelPrincipal();
 //		setIconImage(new ImageIcon(getClass().getResource("/images/WSO.png")).getImage());
 		init();
 	}

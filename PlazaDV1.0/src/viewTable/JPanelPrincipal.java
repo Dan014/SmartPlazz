@@ -23,7 +23,7 @@ public class JPanelPrincipal extends JPanel {
 	Icon icon;
 
 	public JPanelPrincipal(Control control) {
-		this.jPanelPrincipalCentroVistaEmp = new JPanelPrincipalCentroVistaEmp(control);
+		this.jPanelPrincipalCentroVistaEmp = new JPanelPrincipalCentroVistaEmp();
 		this.jPanelPrincipalIzqVistaEmp = new JPanelPrincipalIzqVistaEmp();
 		this.myJTable = new MyJTable();
 		init();

@@ -19,14 +19,14 @@ public class JPanelPrincipal extends JPanel {
 
 
 	private static final long serialVersionUID = 1L;
-	public JPanelPrincipal(Control control) {
+	public JPanelPrincipal() {
 		this.setSize(700, 600);
 		this.setBackground(Color.white);
 		setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
-		initComponents(control);
+		initComponents();
 	}
 
-	private void initComponents(Control control) {
+	private void initComponents() {
 		
 
 		this.setSize(Toolkit.getDefaultToolkit().getScreenSize());
@@ -37,7 +37,7 @@ public class JPanelPrincipal extends JPanel {
 		JPanelCenterForm jPanelCenter = new JPanelCenterForm();
 		this.add(jPanelCenter);
 
-		JPanelSouth jPanelSouth = new JPanelSouth(control);
+		JPanelSouth jPanelSouth = new JPanelSouth();
 		this.add(jPanelSouth);
 
 	}

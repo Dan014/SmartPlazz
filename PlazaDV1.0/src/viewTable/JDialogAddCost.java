@@ -1,6 +1,7 @@
 package viewTable;
 
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.GridLayout;
 import javax.swing.BorderFactory;
 import javax.swing.BoxLayout;
@@ -12,6 +13,8 @@ import javax.swing.JLabel;
 import javax.swing.JSpinner;
 import javax.swing.JTextField;
 import javax.swing.SpinnerNumberModel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.border.EtchedBorder;
 import javax.swing.text.DefaultFormatter;
 import com.toedter.calendar.JDateChooser;
 
@@ -22,84 +25,85 @@ import controller.Control;
 public class JDialogAddCost extends JDialog{
 
 	private static final long serialVersionUID = 1L;
-	private JTextField plate, brand, line, ownerName;
-//	private JComboBox<BrandCategory> jCBCostsCategory;
+	
+	
+	
+	private JTextField jTextFieldName;
+	private JComboBox jComboBoxArea;
 	private JDateChooser jChooserCostDate;
-	private JButton jBCreate, jBCancelCreate;
-	private JSpinner model, displacement, id;
-	
+	private JLabel jLabel, jLabelCheck;
+	JButton jButton;
 	
 
 
-	public JDialogAddCost(Control controller, JFramePrincipal jfMainWindow ) {
+	public JDialogAddCost( ) {
 		setModal(true);
 		setTitle("Informacion");
 		this.setLayout(new GridLayout(12, 1));
 //		setIconImage( new ImageIcon(getClass().getResource( "/img/addCost.png")).getImage());
 		setSize(350, 600);
 		getContentPane().setBackground(Color.WHITE);
-		setLocationRelativeTo(jfMainWindow);
-		initComponents( controller );
+//		setLocationRelativeTo();
+		initComponents(  );
 	}
 
-	private void initComponents(Control controllerApp ) {
+	private void initComponents(  ) {
 	
+		this.setBackground(Color.WHITE);
+
+		jComboBoxArea = new JComboBox<String>();
+		jComboBoxArea.setBackground(Color.WHITE);
+		jComboBoxArea.setBorder(BorderFactory.createCompoundBorder(new EmptyBorder(0, 0, 0, 0), new EtchedBorder()));
+		jComboBoxArea.setPreferredSize(new Dimension(200, 60));
+		jComboBoxArea.setBackground(new java.awt.Color(244, 244, 244));
+		add(jComboBoxArea);
+
+		jComboBoxArea.addItem("");
+		jComboBoxArea.addItem("FRUTAS");
+		jComboBoxArea.addItem("VEGETALES");
+		jComboBoxArea.addItem("LACTEOS");
+		jComboBoxArea.addItem("Otro");
+		createEspacio();
+
+		createJTextField("Nombre del Producto", new Color(244, 244, 244), 200, 60);
+		createEspacio();
+
+		createJTextField("Precio por Kilo", new Color(244, 244, 244), 200, 60);
+		createEspacio();
+
+		createJTextField("Cantidad Disponible", new Color(244, 244, 244), 200, 60);
+		createEspacio();
+
 		jChooserCostDate = new JDateChooser();
-		jChooserCostDate.setBorder(BorderFactory.createTitledBorder("INGRESO:"));
 		add(jChooserCostDate);
+		createEspacio();
+		createEspacio();
 		
-		plate = new JTextField();
-		plate.setBorder(BorderFactory.createTitledBorder("PLACA:"));
-		add(plate);
-
-		model = new JSpinner(new SpinnerNumberModel(0, 0, Integer.MAX_VALUE, 5));
-		model.setBorder(BorderFactory.createTitledBorder("MODELO:"));
-		model.setBackground(Color.WHITE);
-		add(model);
-
-
-//		jCBCostsCategory = new JComboBox<>(BrandCategory.values());
-//		jCBCostsCategory.setBorder(BorderFactory.createTitledBorder("MARCA:"));
-//		jCBCostsCategory.setBackground(Color.WHITE);
-//		add(jCBCostsCategory);
-
-		line = new JTextField();
-		line.setBorder(BorderFactory.createTitledBorder("Linea:"));
-		add(line);
-
-		displacement = new JSpinner(new SpinnerNumberModel(0, 0, Integer.MAX_VALUE, 5));
-		displacement.setBorder(BorderFactory.createTitledBorder("CILINDRAJE:"));
-		displacement.setBackground(Color.WHITE);
-		add(displacement);
+		jButton = new JButton("INGRESAR");
+//		jButton.setActionCommand(controller.Commands.C_INGRES.name());
+//		jButton.addActionListener(controllerApp);
 		
-		
-		ownerName = new JTextField();
-		ownerName.setBorder(BorderFactory.createTitledBorder("PROPIETARIO:"));
-		add(ownerName);
-
-		id = new JSpinner(new SpinnerNumberModel(0, 0, Integer.MAX_VALUE, 5));
-		id.setBorder(BorderFactory.createTitledBorder("IDENTIFICACION:"));
-		id.setBackground(Color.WHITE);
-		add(id);
-		
-		
-	
-
-		jBCreate = new JButton("Crear");
-		jBCreate.setBackground(Color.decode("#337ab7"));
-		jBCreate.setForeground(Color.WHITE);
-//		jBCreate.setActionCommand(Commands.C_CREATE_COST.name());
-		jBCreate.addActionListener(controllerApp);
-		add(jBCreate);
-
-		jBCancelCreate = new JButton("Cancelar");
-		jBCancelCreate.setBackground(Color.decode("#922B3E"));
-		jBCancelCreate.setForeground(Color.WHITE);
-//		jBCancelCreate.setActionCommand(Commands.C_CANCEL_CREATE_COST.name());
-		jBCancelCreate.addActionListener(controllerApp);
-		add( jBCancelCreate );
+		this.add(jButton);
 	}
 
+	public JLabel createEspacio() {
+		jLabel = new JLabel();
+		jLabel.setPreferredSize(new Dimension(0, 20));
+		this.add(jLabel);
+		return jLabel;
+
+	}
+
+	public JTextField createJTextField(String name, Color color, int largo, int ancho) {
+		jTextFieldName = new JTextField(name);
+		jTextFieldName.setBackground(color);
+		jTextFieldName.setPreferredSize(new Dimension(largo, ancho));
+		this.add(jTextFieldName);
+		return jTextFieldName;
+
+	}
+	
+	
 //	public Auto createCost() {
 //		setVisible(false);
 //		return AutoManager.createAuto(Utilities.parseDateToCalendar( jChooserCostDate.getDate() ), plate.getText(), (int) model.getValue(), (BrandCategory)jCBCostsCategory.getSelectedItem(), line.getText(),(int)  displacement.getValue(), ownerName.getText(), (int) id.getValue());

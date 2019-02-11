@@ -14,11 +14,11 @@ public class JPanelSouth extends JPanel {
 
 	JButton jButton;
 
-	public JPanelSouth(Control controllerApp) {
-		init(controllerApp);
+	public JPanelSouth() {
+		init();
 	}
 
-	public void init(Control controllerApp) {
+	public void init() {
 		this.setBackground(Color.WHITE);
 		jButton = new JButton("INGRESAR");
 //		jButton.setActionCommand(controller.Commands.C_INGRES.name());

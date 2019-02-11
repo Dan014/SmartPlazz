@@ -26,7 +26,7 @@ public class Control implements ActionListener {
 	public Control() throws ParseException {
 		
 //		jFramePrincipalTable = new viewTable.JFramePrincipal(this);
-		jDialogAddCost = new JDialogAddCost(this, jFramePrincipalTable);
+//		jDialogAddCost = new JDialogAddCost(this, jFramePrincipalTable);
 
 
 		managerProducts = new ManagerProducts();
