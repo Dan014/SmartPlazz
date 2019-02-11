@@ -20,6 +20,7 @@ import controller.Control;
 
 public class JFramePrincipal extends JFrame {
 	private JPanelPrincipal jPanelPrincipal;
+	private JMeuBarPantallaPrincipal jMeuBarPantallaPrincipal;
 	private JScrollPane jScrollPane;
 	Icon icon;
 
@@ -35,6 +36,9 @@ public class JFramePrincipal extends JFrame {
 		this.setLayout(new BorderLayout());
 		this.setSize(Toolkit.getDefaultToolkit().getScreenSize());
 		this.setLocationRelativeTo(null);
+		
+		jMeuBarPantallaPrincipal = new JMeuBarPantallaPrincipal( );
+		this.setJMenuBar( jMeuBarPantallaPrincipal );
 		
 		jScrollPane.setViewportView(jPanelPrincipal);
 		this.add(jScrollPane, BorderLayout.CENTER);
