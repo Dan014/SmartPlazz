@@ -151,14 +151,14 @@ public class CenterEmpleado extends JPanel {
 		codigo.setForeground(new java.awt.Color(255, 0, 0));
 		add(codigo);
 		
+		jButton = new JButton("Guardar");
+		jButton.setBounds(250, 300, 200, 25);
+		jButton.setFont(new Font("Andale Mono", 3, 15));
+		jButton.setForeground(new Color(23, 4, 255));
+		add(jButton);
+
 		
-		
-//		jLabel = new JLabel();
-//		imageIcon = new ImageIcon(getClass().getResource("/images/user.png"));
-//		icon = new ImageIcon(imageIcon.getImage().getScaledInstance(300, 300, Image.SCALE_AREA_AVERAGING));
-//		jLabel.setIcon(icon);
-//		jPanelCenterImage.add(jLabel);
-		
+				
 		foto = new JLabel();
 		imageIcon = new ImageIcon(getClass().getResource("/images/hombre.png"));
 		foto.setBounds(500, 30, 250, 250);
