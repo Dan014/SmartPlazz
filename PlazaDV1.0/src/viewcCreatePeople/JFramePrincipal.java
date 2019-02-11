@@ -24,8 +24,8 @@ public class JFramePrincipal extends JFrame {
 		this.add(jpanelNorte, BorderLayout.NORTH);
 		this.add(centerEmpleado, BorderLayout.CENTER);
 
-		this.setVisible(true);
-		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+//		this.setVisible(true);
+		this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 	}
 
 }
