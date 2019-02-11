@@ -23,23 +23,25 @@ public class JPanelPrincipalCentroVistaEmp extends JPanel implements ActionListe
 	JButton jButton, jButton2, jButton3, find;
 	ImageIcon imageIcon;
 	Icon icon;
-
-	public JPanelPrincipalCentroVistaEmp() {
+        JDialogAddCost jDialogAddCost;
+	public JPanelPrincipalCentroVistaEmp(ActionListener action) {
 
 		jPanelNorth = new JPanel();
 		jPanelNorth.setBackground(new Color(59, 232, 183));
 		jPanelNorth.setPreferredSize(new Dimension(100, 100));
 
-		init();
+		init(action);
 	}
 
-	private void init() {
+	private void init(ActionListener action) {
 
 		this.setLayout(new BorderLayout());
 		this.setSize(Toolkit.getDefaultToolkit().getScreenSize());
 		this.setBackground(Color.BLUE);
 		this.setPreferredSize(new Dimension(800, 100));
 
+                jDialogAddCost = new JDialogAddCost(action);
+                
 //		jPanelNorth.add(create("Ingresar Producto", "/images/dieta.png", Commands.C_ADDPRODUCT.name()));
 //		jPanelNorth.add(create("Eliminar Producto", "/images/basura.png", Commands.C_AVERAGE.name()));
 //		jPanelNorth.add(create("Buscar Producto", "/images/busqueda.png", Commands.C_AVERAGE.name()));
@@ -105,11 +107,16 @@ public class JPanelPrincipalCentroVistaEmp extends JPanel implements ActionListe
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource() == jButton) {
 			System.out.println("fgdf");
-			JDialogAddCost jDialogAddCost = new JDialogAddCost();
+			
 			jDialogAddCost.setVisible(true);
 			jDialogAddCost.setResizable(false);
 			jDialogAddCost.setLocationRelativeTo(null);
 		}				
 	}
+
+    public JDialogAddCost getjDialogAddCost() {
+        return jDialogAddCost;
+    }
+
 
 }

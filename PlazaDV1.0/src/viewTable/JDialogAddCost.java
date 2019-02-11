@@ -17,26 +17,32 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.border.EtchedBorder;
 import javax.swing.text.DefaultFormatter;
 import com.toedter.calendar.JDateChooser;
+import controller.Commands;
 
 import controller.Control;
+import java.awt.event.ActionListener;
+import java.util.Calendar;
 
 
 
 public class JDialogAddCost extends JDialog{
 
 	private static final long serialVersionUID = 1L;
-	
-	
-	
 	private JTextField jTextFieldName;
 	private JComboBox jComboBoxArea;
 	private JDateChooser jChooserCostDate;
 	private JLabel jLabel, jLabelCheck;
-	JButton jButton;
+	private JButton jBLogin;
+        
+        private JTextField jtfNameProd;
+        private JTextField jtPriceProd;
+        private JTextField jtKilos;
+        
+        private JButton btnCreateProd;
 	
 
 
-	public JDialogAddCost( ) {
+	public JDialogAddCost(ActionListener action) {
 		setModal(true);
 		setTitle("Informacion");
 		this.setLayout(new GridLayout(12, 1));
@@ -44,10 +50,10 @@ public class JDialogAddCost extends JDialog{
 		setSize(350, 600);
 		getContentPane().setBackground(Color.WHITE);
 //		setLocationRelativeTo();
-		initComponents(  );
+		initComponents( action );
 	}
 
-	private void initComponents(  ) {
+	private void initComponents(  ActionListener action) {
 	
 		this.setBackground(Color.WHITE);
 
@@ -58,32 +64,44 @@ public class JDialogAddCost extends JDialog{
 		jComboBoxArea.setBackground(new java.awt.Color(244, 244, 244));
 		add(jComboBoxArea);
 
-		jComboBoxArea.addItem("");
+		jComboBoxArea.addItem("CARNICOS");
 		jComboBoxArea.addItem("FRUTAS");
 		jComboBoxArea.addItem("VEGETALES");
 		jComboBoxArea.addItem("LACTEOS");
 		jComboBoxArea.addItem("Otro");
 		createEspacio();
 
-		createJTextField("Nombre del Producto", new Color(244, 244, 244), 200, 60);
+		jtfNameProd = new JTextField("nombre producto");
+                    jtfNameProd.setBackground(new Color(244, 244, 244));
+                    jtfNameProd.setPreferredSize(new Dimension(200, 60));
+                add(jtfNameProd);
+                
 		createEspacio();
 
-		createJTextField("Precio por Kilo", new Color(244, 244, 244), 200, 60);
+		jtPriceProd = new JTextField("Precio");
+                    jtPriceProd.setBackground(new Color(244, 244, 244));
+                    jtPriceProd.setPreferredSize(new Dimension(200, 60));
+                add(jtPriceProd);
 		createEspacio();
 
-		createJTextField("Cantidad Disponible", new Color(244, 244, 244), 200, 60);
+                jtKilos = new JTextField("kilos");
+                    jtKilos.setBackground(new Color(244, 244, 244));
+                    jtKilos.setPreferredSize(new Dimension(200, 60));
+                add(jtKilos);
+		
 		createEspacio();
 
 		jChooserCostDate = new JDateChooser();
 		add(jChooserCostDate);
 		createEspacio();
 		createEspacio();
-		
-		jButton = new JButton("INGRESAR");
-//		jButton.setActionCommand(controller.Commands.C_INGRES.name());
-//		jButton.addActionListener(controllerApp);
-		
-		this.add(jButton);
+                
+                btnCreateProd = new JButton("crearProducto");
+                    btnCreateProd.addActionListener(action);
+                    btnCreateProd.setActionCommand(Commands.C_NEW_PROD.toString());
+                
+                add(btnCreateProd);
+
 	}
 
 	public JLabel createEspacio() {
@@ -104,16 +122,25 @@ public class JDialogAddCost extends JDialog{
 	}
 	
 	
-//	public Auto createCost() {
-//		setVisible(false);
-//		return AutoManager.createAuto(Utilities.parseDateToCalendar( jChooserCostDate.getDate() ), plate.getText(), (int) model.getValue(), (BrandCategory)jCBCostsCategory.getSelectedItem(), line.getText(),(int)  displacement.getValue(), ownerName.getText(), (int) id.getValue());
-//
-//	}
-//	public void showDialog() {
-//		jTFNotes.setText("");
-////		jChooserCostDate.setDate( );
-//	}
-
+	public String getTypeProd(){
+            return jComboBoxArea.getSelectedItem().toString();
+        }
+        
+        public String getNameProd(){
+            return jtfNameProd.getText();
+        }
+        
+        public int getPrice(){
+            return Integer.parseInt(jtPriceProd.getText());
+        }
+        
+        public int getKilos(){
+            return Integer.parseInt(jtKilos.getText());
+        }
+        
+        public Calendar getDateProd(){
+            return jChooserCostDate.getCalendar();
+        }
 
 
 }

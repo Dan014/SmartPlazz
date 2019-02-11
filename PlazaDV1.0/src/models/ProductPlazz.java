@@ -8,10 +8,10 @@ public class ProductPlazz {
     private static int idsprod;
     private int idProductPlazz,kilosProd,priceProd;
     private String nameProductPlazz;
-    private TypeProduct typeprod;
+    private String typeprod;
     private Calendar dateSell;
 
-    public ProductPlazz( int kilosProd, int priceProd, String nameProductPlazz, TypeProduct typeprod, Calendar dateSell) {
+    public ProductPlazz( int kilosProd, int priceProd, String nameProductPlazz, String typeprod, Calendar dateSell) {
         idsprod++;
         this.idProductPlazz = idsprod;
         this.kilosProd = kilosProd;
@@ -37,7 +37,7 @@ public class ProductPlazz {
         return nameProductPlazz;
     }
 
-    public TypeProduct getTypeprod() {
+    public String getTypeprod() {
         return typeprod;
     }
 

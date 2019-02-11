@@ -112,11 +112,13 @@ public class JPanelPrincipal extends JPanel implements ActionListener {
 		return jLabel;
 
 	}
+        
+        
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource() == jButton) {
-			viewTable.JFramePrincipal ventanaJTable = new viewTable.JFramePrincipal(null);
+			viewTable.JFramePrincipalDialog ventanaJTable = new viewTable.JFramePrincipalDialog(null);
 			ventanaJTable.setVisible(true);
 			ventanaJTable.setResizable(false);
 			ventanaJTable.setLocationRelativeTo(null);

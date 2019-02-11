@@ -23,7 +23,7 @@ public class JPanelPrincipal extends JPanel {
 	Icon icon;
 
 	public JPanelPrincipal(Control control) {
-		this.jPanelPrincipalCentroVistaEmp = new JPanelPrincipalCentroVistaEmp();
+		this.jPanelPrincipalCentroVistaEmp = new JPanelPrincipalCentroVistaEmp(control);
 		this.jPanelPrincipalIzqVistaEmp = new JPanelPrincipalIzqVistaEmp();
 		this.myJTable = new MyJTable();
 		init();
@@ -40,6 +40,10 @@ public class JPanelPrincipal extends JPanel {
 		this.add(jPanelPrincipalIzqVistaEmp, BorderLayout.WEST);
 
 	}
+        
+        public JPanelPrincipalCentroVistaEmp getjPanelPrincipalCentroVistaEmp() {
+            return jPanelPrincipalCentroVistaEmp;
+        }
 
 	public void addElementToTable(Object[] vectorElement) {
 		myJTable.addElementtoTable(vectorElement);

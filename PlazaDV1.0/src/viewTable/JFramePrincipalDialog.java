@@ -18,13 +18,13 @@ import javax.swing.JScrollPane;
 
 import controller.Control;
 
-public class JFramePrincipal extends JFrame {
+public class JFramePrincipalDialog extends JFrame {
 	private JPanelPrincipal jPanelPrincipal;
 	private JMeuBarPantallaPrincipal jMeuBarPantallaPrincipal;
 	private JScrollPane jScrollPane;
 	Icon icon;
 
-	public JFramePrincipal(Control controllerApp ) {
+	public JFramePrincipalDialog(Control controllerApp ) {
 		this.jPanelPrincipal = new JPanelPrincipal(controllerApp);
 		this.jScrollPane = new JScrollPane();
 //		setIconImage(new ImageIcon(getClass().getResource("/images/WSO.png")).getImage());
@@ -47,6 +47,10 @@ public class JFramePrincipal extends JFrame {
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 	}
+        
+        public JDialogAddCost getjdialog() {
+        return jPanelPrincipal.getjPanelPrincipalCentroVistaEmp().getjDialogAddCost();
+    }
 	
 
 	

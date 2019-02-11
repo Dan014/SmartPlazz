@@ -31,7 +31,7 @@ public class ManagerProducts {
     }
     
     
-    public static ProductPlazz createProdcut(int kilos,int price,String nameProductPlazz,TypeProduct typeProduct,Calendar dateSell){
+    public static ProductPlazz createProdcut(int kilos,int price,String nameProductPlazz,String typeProduct,Calendar dateSell){
         return new ProductPlazz(kilos, price, nameProductPlazz, typeProduct, dateSell);
     }
     

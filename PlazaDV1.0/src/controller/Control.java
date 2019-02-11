@@ -4,6 +4,7 @@ package controller;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.text.ParseException;
+import java.util.Calendar;
 
 import javax.swing.JDialog;
 
@@ -14,6 +15,7 @@ import models.TypeProduct;
 import persitence.FileManager;
 import view.JFramePrincipal;
 import viewTable.JDialogAddCost;
+import viewTable.JFramePrincipalDialog;
 
 public class Control implements ActionListener {
 	/**
@@ -21,28 +23,30 @@ public class Control implements ActionListener {
 	 */
 	private ManagerProducts managerProducts;
 	private JFramePrincipal mainFrame;
-	private viewTable.JFramePrincipal jFramePrincipalTable;
+        private JFramePrincipalDialog trumainframe;
+	private viewTable.JFramePrincipalDialog jFramePrincipalTable;
 	private viewcCreatePeople.JFramePrincipal jFramePrincipalPeople;
 	private JDialogAddCost jDialogAddCost;
 	private FileManager filemanager;
 
 	public Control() throws ParseException {
 
-		// jFramePrincipalTable = new viewTable.JFramePrincipal(this);
+		// jFramePrincipalTable = new viewTable.JFramePrincipalDialog(this);
 		// jDialogAddCost = new JDialogAddCost(this, jFramePrincipalTable);
 
 		managerProducts = new ManagerProducts();
 		mainFrame = new JFramePrincipal(this);
 		filemanager = new FileManager();
+                
+                trumainframe = new JFramePrincipalDialog(this);
 
-		// managerProducts.addSeller(managerProducts.createSeller("manuel",
-		// 1049777766));
+                 managerProducts.addSeller(managerProducts.createSeller("manuel", 1049777766));
 		//
 		// managerProducts.addNewProdcut(managerProducts.createProdcut(100, 1000,
 		// "mango", TypeProduct.frutas,
 		// filemanager.createDate("06/01/2019")), 1049777766);
 
-		filemanager.writeBinary(managerProducts.getListOfProdcuts());
+		//filemanager.writeBinary(managerProducts.getListOfProdcuts());
 	}
 
 	@Override
@@ -91,8 +95,15 @@ public class Control implements ActionListener {
 	}
 
 	private void createNewProd() {
-		throw new UnsupportedOperationException("Not supported yet."); // To change body of generated methods, choose
-																		// Tools | Templates.
+            String nameProd = trumainframe.getjdialog().getNameProd();
+            int priceProd = trumainframe.getjdialog().getPrice();
+            int kilos = trumainframe.getjdialog().getKilos();
+            Calendar date = trumainframe.getjdialog().getDateProd();
+            String typeProd = trumainframe.getjdialog().getTypeProd();
+            
+            managerProducts.addNewProdcut(managerProducts.createProdcut(kilos, priceProd, nameProd, typeProd, date), 1049777766);		
+            System.out.println("se ha creado un producto");
+// Tools | Templates.
 	}
 
 }
