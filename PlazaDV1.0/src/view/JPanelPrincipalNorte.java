@@ -46,6 +46,8 @@ public class JPanelPrincipalNorte extends JPanel {
 		
 		
 		jButtonLogin = new JButton("CREAR");
+		jButtonLogin.setActionCommand(controller.Commands.C_CREATE_PEOPLE.name());
+		jButtonLogin.addActionListener(controllerApp);
 
 		init();
 	}

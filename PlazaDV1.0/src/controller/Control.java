@@ -24,19 +24,20 @@ public class Control implements ActionListener {
 	private FileManager filemanager;
 
 	public Control() throws ParseException {
-		
-//		jFramePrincipalTable = new viewTable.JFramePrincipal(this);
-//		jDialogAddCost = new JDialogAddCost(this, jFramePrincipalTable);
 
+		// jFramePrincipalTable = new viewTable.JFramePrincipal(this);
+		// jDialogAddCost = new JDialogAddCost(this, jFramePrincipalTable);
 
 		managerProducts = new ManagerProducts();
 		mainFrame = new JFramePrincipal(this);
 		filemanager = new FileManager();
 
-//		managerProducts.addSeller(managerProducts.createSeller("manuel", 1049777766));
-//
-//		managerProducts.addNewProdcut(managerProducts.createProdcut(100, 1000, "mango", TypeProduct.frutas,
-//				filemanager.createDate("06/01/2019")), 1049777766);
+		// managerProducts.addSeller(managerProducts.createSeller("manuel",
+		// 1049777766));
+		//
+		// managerProducts.addNewProdcut(managerProducts.createProdcut(100, 1000,
+		// "mango", TypeProduct.frutas,
+		// filemanager.createDate("06/01/2019")), 1049777766);
 
 		filemanager.writeBinary(managerProducts.getListOfProdcuts());
 	}
@@ -48,28 +49,33 @@ public class Control implements ActionListener {
 			showViewLogin();
 			break;
 		case C_AVERAGE:
-			jDialogAddCost.setVisible( true );
-                        
-                        break;
+			jDialogAddCost.setVisible(true);
 
-                case C_NEW_PROD:
-                        createNewProd();
-                        break;
-                        
+			break;
+		case C_CREATE_PEOPLE:
+			showViewCreate();
+			break;
+
+		case C_NEW_PROD:
+			createNewProd();
+			break;
+
 		default:
 			break;
 
 		}
-	
+
 	}
-	
-	
+
 	private void showViewLogin() {
 		viewLogin.JFramePrincipal jFramePrincipal = new viewLogin.JFramePrincipal(null);
 		jFramePrincipal.setVisible(true);
 	}
 	
-
+	private void showViewCreate() {
+		viewcCreatePeople.JFramePrincipal jFramePrincipal = new viewcCreatePeople.JFramePrincipal();
+		jFramePrincipal.setVisible(true);
+	}
 
 	private void manageAuto() {
 		// Auto auto = jDialogAddCost.createCost();
@@ -78,8 +84,9 @@ public class Control implements ActionListener {
 		// jfMainWindow.addElementToTable(auto.toObjectVector());
 	}
 
-    private void createNewProd() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+	private void createNewProd() {
+		throw new UnsupportedOperationException("Not supported yet."); // To change body of generated methods, choose
+																		// Tools | Templates.
+	}
 
 }
