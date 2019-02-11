@@ -8,6 +8,8 @@ import java.text.ParseException;
 import javax.swing.JDialog;
 
 import models.ManagerProducts;
+import models.Sellerplazz;
+import models.SoldProduct;
 import models.TypeProduct;
 import persitence.FileManager;
 import view.JFramePrincipal;
@@ -20,6 +22,7 @@ public class Control implements ActionListener {
 	private ManagerProducts managerProducts;
 	private JFramePrincipal mainFrame;
 	private viewTable.JFramePrincipal jFramePrincipalTable;
+	private viewcCreatePeople.JFramePrincipal jFramePrincipalPeople;
 	private JDialogAddCost jDialogAddCost;
 	private FileManager filemanager;
 
@@ -55,6 +58,9 @@ public class Control implements ActionListener {
 		case C_CREATE_PEOPLE:
 			showViewCreate();
 			break;
+		case C_SAVEPEOPLE:
+			manageUser();
+			break;
 
 		case C_NEW_PROD:
 			createNewProd();
@@ -77,11 +83,11 @@ public class Control implements ActionListener {
 		jFramePrincipal.setVisible(true);
 	}
 
-	private void manageAuto() {
-		// Auto auto = jDialogAddCost.createCost();
-		// enterprise.addCost(auto);
-		// enterprise.addtoArray(auto);
-		// jfMainWindow.addElementToTable(auto.toObjectVector());
+	private void manageUser() {
+		 Sellerplazz soldProduct = jFramePrincipalPeople.createPeople();
+		 managerProducts.addSeller(soldProduct);
+		 System.out.println(soldProduct);
+//		 jfMainWindow.addElementToTable(soldProduct.toObjectVector());
 	}
 
 	private void createNewProd() {

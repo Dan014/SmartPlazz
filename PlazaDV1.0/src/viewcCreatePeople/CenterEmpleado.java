@@ -6,6 +6,7 @@ import java.awt.Font;
 import java.awt.Image;
 import java.awt.Toolkit;
 
+import javax.swing.BorderFactory;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -13,15 +14,24 @@ import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JSpinner;
 import javax.swing.JTextField;
+import javax.swing.SpinnerNumberModel;
+import javax.swing.text.DefaultFormatter;
+
+import models.ManagerProducts;
+import models.Sellerplazz;
+
 
 public class CenterEmpleado extends JPanel {
 	ImageIcon imageIcon;
 	Icon icon;
 	JButton jButton;
 	JLabel jLabel, jLabel2, jLabel3, jLabel4, jLabel5, jLabel6, jLabel7, jLabel8, jLabel9, foto;
-	JTextField name, cedula, direccion, telefono, apellido, cargo, edad, codigo;
+	JTextField name, cedula, direccion, telefono, apellido, cargo, edad;
 	JComboBox categoria;
+	private JSpinner codigo;
+
 
 	public CenterEmpleado() {
 
@@ -143,18 +153,24 @@ public class CenterEmpleado extends JPanel {
 		jLabel8.setForeground(new Color(23, 4, 255));
 		jLabel8.setBackground(Color.BLUE);
 		add(jLabel8);
-
-		codigo = new JTextField();
-		codigo.setBounds(250, 245, 200, 25);
-		codigo.setBackground(new java.awt.Color(224, 224, 224));
-		codigo.setFont(new java.awt.Font("Andale Mono", 1, 14));
-		codigo.setForeground(new java.awt.Color(255, 0, 0));
+		
+		
+		
+		codigo = new JSpinner(new SpinnerNumberModel(100, 0, Integer.MAX_VALUE, 5));
+		codigo.setBounds(250, 245, 200, 40);
+		((DefaultFormatter) ((JSpinner.NumberEditor)codigo.getEditor()).getTextField().getFormatter()).setAllowsInvalid(false);
+		codigo.setBorder(BorderFactory.createTitledBorder("Valor:"));
+		codigo.setBackground(Color.WHITE);
 		add(codigo);
+
+
 		
 		jButton = new JButton("Guardar");
 		jButton.setBounds(250, 300, 200, 25);
 		jButton.setFont(new Font("Andale Mono", 3, 15));
 		jButton.setForeground(new Color(23, 4, 255));
+		jButton.setActionCommand(controller.Commands.C_SAVEPEOPLE.name());
+//		jButton.addActionListener(controllerApp);
 		add(jButton);
 
 		
@@ -170,6 +186,11 @@ public class CenterEmpleado extends JPanel {
 		
 
 
+	}
+	
+	
+	public Sellerplazz createPeople() {
+		return ManagerProducts.createSeller(cedula.getText(), (int) codigo.getValue());
 	}
 
 }

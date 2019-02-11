@@ -6,6 +6,8 @@ import java.awt.Toolkit;
 
 import javax.swing.JFrame;
 
+import models.Sellerplazz;
+
 public class JFramePrincipal extends JFrame {
 	CenterEmpleado centerEmpleado;
 	JpanelNorte jpanelNorte;
@@ -26,6 +28,13 @@ public class JFramePrincipal extends JFrame {
 
 //		this.setVisible(true);
 		this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		
+		
+	}
+	
+	public Sellerplazz createPeople() {
+		return centerEmpleado.createPeople();
+
 	}
 
 }

@@ -17,7 +17,7 @@ public class JpanelNorte extends JPanel {
 
 	private void init() {
 		this.setLayout(new FlowLayout());
-		this.setBackground(new Color(42, 106, 125));
+		this.setBackground(new Color(59, 232, 183));
 		jLabel.setForeground(new java.awt.Color(255, 255, 255));
 
 		this.add(jLabel);
