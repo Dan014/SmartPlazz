@@ -79,7 +79,7 @@ public class JPanelPrincipal extends JPanel implements ActionListener {
 
 		jPanelCenterCampos.add(createJTextField("User", new Color(244, 244, 244), 400, 60));
 		jPanelCenterCampos.add(createEspacio());
-		jPanelCenterCampos.add(createJTextField("Contraseña", new Color(244, 244, 244), 400, 60));
+		jPanelCenterCampos.add(createJTextField("Contrasena", new Color(244, 244, 244), 400, 60));
 
 		jPanelCenter.add(jPanelCenterCampos, BorderLayout.CENTER);
 		jPanelCenter.add(jPanelCenterImage, BorderLayout.NORTH);

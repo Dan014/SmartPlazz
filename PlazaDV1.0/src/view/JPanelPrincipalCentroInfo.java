@@ -36,7 +36,7 @@ public class JPanelPrincipalCentroInfo extends JPanel {
 		this.add(jPanelPrototipo = new JPanelPrototipo("Cebolla Larga", 1300, 4, "/images/cebollaL.jpg"));
 		this.add(jPanelPrototipo = new JPanelPrototipo("Coco", 3000, 5, "/images/coco.jpg"));
 		this.add(jPanelPrototipo = new JPanelPrototipo("Manzana", 1700, 15, "/images/manzana.jpg"));
-		this.add(jPanelPrototipo = new JPanelPrototipo("Piña", 2500, 2, "/images/piña.jpg"));
+		this.add(jPanelPrototipo = new JPanelPrototipo("Pina", 2500, 2, "/images/piÃ±a.jpg"));
 		this.add(jPanelPrototipo = new JPanelPrototipo("Remolacha", 1400, 6, "/images/remolacha.jpg"));
 		this.add(jPanelPrototipo = new JPanelPrototipo("Sandia", 3200, 12, "/images/sandia.jpg"));
 		this.add(jPanelPrototipo = new JPanelPrototipo("Zanahoria", 1200, 7, "/images/zanahoria.jpg"));

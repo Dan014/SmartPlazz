@@ -49,6 +49,10 @@ public class Control implements ActionListener {
 			break;
 		case C_AVERAGE:
 			jDialogAddCost.setVisible( true );
+                        
+                        break;
+                        
+                 
 
 		default:
 			break;

@@ -21,8 +21,8 @@ public class JPanelPrototipo extends JPanel {
 	private JPanel jPanelCentroContenedor, jPanelDerechoContenedor,jPanelPrecios, jPanelTitle;
 	private JLabel jLabel, jLabel2, jLabel3, jLabel4;
 
-	ImageIcon imageIcon;
-	Icon icon;
+	private ImageIcon imageIcon;
+	private Icon icon;
 
 	public JPanelPrototipo(String name, int precio, int porcentaje, String url) {
 
