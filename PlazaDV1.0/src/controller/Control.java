@@ -51,9 +51,11 @@ public class Control implements ActionListener {
 			jDialogAddCost.setVisible( true );
                         
                         break;
-                        
-                 
 
+                case C_NEW_PROD:
+                        createNewProd();
+                        break;
+                        
 		default:
 			break;
 
@@ -75,5 +77,9 @@ public class Control implements ActionListener {
 		// enterprise.addtoArray(auto);
 		// jfMainWindow.addElementToTable(auto.toObjectVector());
 	}
+
+    private void createNewProd() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 
 }
