@@ -12,7 +12,7 @@ public class ManagerProducts {
     private ArrayList<SoldProduct>listSoldproduct;
 
     public ManagerProducts() {
-        listOfProdcuts = new ArrayList<>();
+        listOfProdcuts = new ArrayList<ProductPlazz>();
         listSellersPlazz = new ArrayList<>();
         listSoldproduct = new ArrayList<>();
         

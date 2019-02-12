@@ -48,11 +48,13 @@ public class JFramePrincipalDialog extends JFrame {
 
 	}
         
-        public JDialogAddCost getjdialog() {
+    public JDialogAddCost getjdialog() {
         return jPanelPrincipal.getjPanelPrincipalCentroVistaEmp().getjDialogAddCost();
     }
 	
-
+    public MyJTable gettable(){
+        return jPanelPrincipal.getMyJTable();
+    }
 	
 
 }

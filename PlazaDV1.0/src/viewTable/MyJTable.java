@@ -4,12 +4,14 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.Font;
+import java.util.ArrayList;
 
 import javax.swing.BoxLayout;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
+import models.ProductPlazz;
 
 public class MyJTable extends JPanel {
 
@@ -47,6 +49,20 @@ public class MyJTable extends JPanel {
 		this.setBorder(null);
 
 	}
+        
+        public void fillTable(ArrayList<ProductPlazz> bookingList) {
+        
+	defaultTableModel.setRowCount(0);
+	for (ProductPlazz reserve : bookingList) {
+		defaultTableModel.addRow(new Object[] {reserve.getTypeprod(),reserve.getNameProductPlazz(),reserve.getPriceProd(), reserve.getKilosProd(), reserve.getDateSell().toString()});
+	}
+	repaint();
+        revalidate();
+    }
+	
+    public int getSelectedId() {
+	return (int)defaultTableModel.getValueAt(jTable.getSelectedRow(), 0);
+    }
 
 	public void addElementtoTable(Object[] vector) {
 		defaultTableModel.addRow(vector);

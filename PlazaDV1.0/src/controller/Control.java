@@ -31,21 +31,18 @@ public class Control implements ActionListener {
 
 	public Control() throws ParseException {
 
-		// jFramePrincipalTable = new viewTable.JFramePrincipalDialog(this);
+		jFramePrincipalTable = new viewTable.JFramePrincipalDialog(this);
 		// jDialogAddCost = new JDialogAddCost(this, jFramePrincipalTable);
-
+                filemanager = new FileManager();    
 		managerProducts = new ManagerProducts();
 		mainFrame = new JFramePrincipal(this);
-		filemanager = new FileManager();
-                
-                trumainframe = new JFramePrincipalDialog(this);
+		
+                //trumainframe = new JFramePrincipalDialog(this);
 
-                 managerProducts.addSeller(managerProducts.createSeller("manuel", 1049777766));
-		//
-		// managerProducts.addNewProdcut(managerProducts.createProdcut(100, 1000,
-		// "mango", TypeProduct.frutas,
-		// filemanager.createDate("06/01/2019")), 1049777766);
+                managerProducts.addSeller(managerProducts.createSeller("manuel", 1049777766));
 
+		managerProducts.addNewProdcut(managerProducts.createProdcut(100, 1000,"mango","fruta",filemanager.createDate("06/01/2019")), 1049777766);
+                fillTable();
 		//filemanager.writeBinary(managerProducts.getListOfProdcuts());
 	}
 
@@ -86,6 +83,10 @@ public class Control implements ActionListener {
 		viewcCreatePeople.JFramePrincipal jFramePrincipal = new viewcCreatePeople.JFramePrincipal();
 		jFramePrincipal.setVisible(true);
 	}
+        
+        private void fillTable(){
+            jFramePrincipalTable.gettable().fillTable(managerProducts.getListOfProdcuts());
+        }
 
 	private void manageUser() {
 		 Sellerplazz soldProduct = jFramePrincipalPeople.createPeople();

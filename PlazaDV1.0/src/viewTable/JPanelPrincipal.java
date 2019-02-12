@@ -40,6 +40,12 @@ public class JPanelPrincipal extends JPanel {
 		this.add(jPanelPrincipalIzqVistaEmp, BorderLayout.WEST);
 
 	}
+
+    public MyJTable getMyJTable() {
+        return myJTable;
+    }
+        
+        
         
         public JPanelPrincipalCentroVistaEmp getjPanelPrincipalCentroVistaEmp() {
             return jPanelPrincipalCentroVistaEmp;
