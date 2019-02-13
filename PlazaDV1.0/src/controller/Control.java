@@ -102,7 +102,8 @@ public class Control implements ActionListener {
             Calendar date = trumainframe.getjdialog().getDateProd();
             String typeProd = trumainframe.getjdialog().getTypeProd();
             
-            managerProducts.addNewProdcut(managerProducts.createProdcut(kilos, priceProd, nameProd, typeProd, date), 1049777766);		
+            managerProducts.addNewProdcut(managerProducts.createProdcut(kilos, priceProd, nameProd, typeProd, date), 1049777766);	
+            trumainframe.getjdialog().setVisible(false);
             System.out.println("se ha creado un producto");
 // Tools | Templates.
 	}
